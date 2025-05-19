@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: BakudanBitoImage_6
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1339877674, guid: 1b4e096f59a2cae4cae3d3df5196da5c, type: 3}
+  m_Sprite: {fileID: -744715785453988100, guid: 6f913e14c90450d43a97adb4ccde0aff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
