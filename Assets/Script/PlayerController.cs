@@ -19,21 +19,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(0, 1.0f, 0);
+            transform.Translate(0, 0.1f, 0);
         }
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+        if(Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Translate(0, -1.0f, 0);
+            transform.Translate(0, -0.1f, 0);
         }
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if(Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(-1.0f, 0, 0);
+            transform.Translate(-0.1f, 0, 0);
         }
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Translate(1.0f, 0, 0);
+            transform.Translate(0.1f, 0, 0);
         }
     }
 }
