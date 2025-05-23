@@ -12,7 +12,7 @@ public enum Tetromino
     Z
 }
 
-
+[System.Serializable]
 public struct TetrominoData
 {
     public Tile tile;

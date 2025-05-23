@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6796897726030711422}
   - component: {fileID: 4444238747785353093}
   - component: {fileID: 8619994191225274619}
-  - component: {fileID: 57825539631146598}
+  - component: {fileID: 1781712209668632725}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -138,8 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1783072e0db2f8e4580a2053dc350c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 6253188455772040617}
-  speed: 1
 --- !u!50 &8619994191225274619
 Rigidbody2D:
   serializedVersion: 4
@@ -166,8 +164,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &57825539631146598
+  m_Constraints: 4
+--- !u!114 &1781712209668632725
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,6 +174,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6253188455772040617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b148c7728256ad94894ba856cfa3a620, type: 3}
+  m_Script: {fileID: 11500000, guid: bed0dfc286f6223439f58fe5b660ec75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

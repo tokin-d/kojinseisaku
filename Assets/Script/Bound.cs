@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bound : MonoBehaviour
 {
     Vector2 velocity;
-
+    
     // Update is called once per frame
     void Update()
     {
