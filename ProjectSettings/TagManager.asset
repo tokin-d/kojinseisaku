@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Stage
+  - Bomb
   - Water
   - UI
+  - Stage
   - Player
-  - Bomb
   - Explosion
   - 
   - 

@@ -67,5 +67,13 @@ public class MovementController : MonoBehaviour
     private void DeathSequence()
     {
         enabled = false;
+        GetComponent<BombController>().enabled = false;
+
+        Invoke(nameof(OnDeathSequeceEnabled), 1.0f);
+    }
+
+    private void OnDeathSequeceEnabled()
+    {
+        gameObject.SetActive(false);
     }
 }
