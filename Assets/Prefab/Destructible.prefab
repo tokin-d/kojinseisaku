@@ -149,8 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleSprite: {fileID: 947075018, guid: 6f913e14c90450d43a97adb4ccde0aff, type: 3}
   animationSprites:
+  - {fileID: 947075018, guid: 6f913e14c90450d43a97adb4ccde0aff, type: 3}
   - {fileID: 822602700, guid: 6f913e14c90450d43a97adb4ccde0aff, type: 3}
-  animationTime: 0.25
+  animationTime: 0.5
   loop: 0
   idle: 0
 --- !u!114 &1795724943477663315

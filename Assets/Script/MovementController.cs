@@ -10,6 +10,12 @@ public class MovementController : MonoBehaviour
 
     public float speed = 5f;
 
+    [Header("Input")]
+    public KeyCode inputUp = KeyCode.W;
+    public KeyCode inputDown = KeyCode.S;
+    public KeyCode inputLeft = KeyCode.A;
+    public KeyCode inputRight = KeyCode.D;
+
     private AnimatedSpriteRenderer activeSpriteRenderer;
 
     private void Awake()
@@ -19,20 +25,20 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.W))
+        if(Input.GetKey(inputUp))
         {
             SetDirection(Vector2.up);
 
         } 
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(inputDown))
         {
             SetDirection(Vector2.down);
         }
-        else if(Input.GetKey(KeyCode.A))
+        else if(Input.GetKey(inputLeft))
         {
             SetDirection(Vector2.left);
         }
-        else if(Input.GetKey(KeyCode.D))
+        else if(Input.GetKey(inputRight))
         {
             SetDirection(Vector2.right);
         }
@@ -75,5 +81,6 @@ public class MovementController : MonoBehaviour
     private void OnDeathSequeceEnabled()
     {
         gameObject.SetActive(false);
+        GameManager.Instance.CheckWinState();
     }
 }

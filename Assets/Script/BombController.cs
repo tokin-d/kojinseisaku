@@ -15,6 +15,7 @@ public class BombController : MonoBehaviour
     [Header("Explosion")]
     public Explosion explosionPrefab;
     public LayerMask explosionLayerMask;
+    public LayerMask explosionLayerMask2;
     public float explosionDuration = 1f;
     public int explosionRadius = 2;
 
@@ -22,6 +23,8 @@ public class BombController : MonoBehaviour
     [Header("Destructible")]
     public Tilemap destrucibleTiles;
     public Destructible destructiblePrefab;
+
+    
 
     private void OnEnable()
     {
@@ -76,7 +79,8 @@ public class BombController : MonoBehaviour
 
         position += direction;
 
-        if(Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))
+        if(Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask)
+            || Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask2))
         {
             ClearDestructible(position);
             return;
@@ -109,4 +113,6 @@ public class BombController : MonoBehaviour
             collision.isTrigger = false;
         }
     }
+
+    
 }

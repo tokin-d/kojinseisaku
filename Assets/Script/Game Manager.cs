@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private GameObject[] players;
+    public GameObject[] players;
 
     private void Awake()
     {
@@ -40,9 +40,9 @@ public class GameManager : MonoBehaviour
     public void CheckWinState()
     {
         int aliveCount = 0;
-        for(int i = 0; i < players.Length; i++)
+        foreach(GameObject player in players)
         {
-            if (players[i].activeSelf)
+            if (player.activeSelf)
             {
                 aliveCount++;
             }
