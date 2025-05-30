@@ -1,8 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
-
+using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 [DefaultExecutionOrder(-1)]
 public class Board : MonoBehaviour
@@ -53,14 +53,19 @@ public class Board : MonoBehaviour
         else
         {
             GameOver();
+            
         }
     }
 
-    public void GameOver()
+    public async void GameOver()
     {
         tilemap.ClearAllTiles();
 
+        activePiece.enabled = false; 
         // ’Ç‰Á
+        SceneManager.LoadScene("Title");
+        await Task.Delay(500);
+        
     }
 
     public void Set(Piece piece)
