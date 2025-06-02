@@ -17,6 +17,12 @@ public class Piece : MonoBehaviour
     private float moveTime;
     private float lockTime;
 
+    /// <summary>
+    /// ゲームの初期化
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="position"></param>
+    /// <param name="data"></param>
     public void Initialize(Board board, Vector3Int position, TetrominoData data)
     {
         this.data = data;
@@ -82,6 +88,9 @@ public class Piece : MonoBehaviour
         board.Set(this);
     }
 
+    /// <summary>
+    /// 入力処理
+    /// </summary>
     private void HandleMoveInputs()
     {
         if (Input.GetKey(KeyCode.S))
@@ -131,6 +140,11 @@ public class Piece : MonoBehaviour
         board.SpawnPiece();
     }
 
+    /// <summary>
+    /// 移動処理
+    /// </summary>
+    /// <param name="translation"></param>
+    /// <returns>移動可能かどうか</returns>
     private bool Move(Vector2Int translation)
     {
         Vector3Int newPosition = position;
@@ -149,6 +163,10 @@ public class Piece : MonoBehaviour
         return valid;
     }
 
+    /// <summary>
+    /// ピースの回転処理
+    /// </summary>
+    /// <param name="direction"></param>
     private void Rotate(int direction)
     {
         int originalRotation = rotationIndex;
@@ -163,6 +181,10 @@ public class Piece : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 適用するべき回転行列
+    /// </summary>
+    /// <param name="direction"></param>
     private void ApplyRotationMatrix(int direction)
     {
         float[] matrix = Data.RotationMatrix;
@@ -193,6 +215,12 @@ public class Piece : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ウォールキックテスト関数
+    /// </summary>
+    /// <param name="rotationIndex"></param>
+    /// <param name="rotationDirection"></param>
+    /// <returns>できるかどうか</returns>
     private bool TestWallKicks(int rotationIndex, int rotationDirection)
     {
         int wallKickIndex = GetWallKickIndex(rotationIndex, rotationDirection);
@@ -211,6 +239,12 @@ public class Piece : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// ウォールキックの処理を行う関数
+    /// </summary>
+    /// <param name="rotationIndex"></param>
+    /// <param name="rotationDirection"></param>
+    /// <returns>回転入れ</returns>
     private int GetWallKickIndex(int rotationIndex, int rotationDirection)
     {
         int walKickIndex = rotationIndex * 2;
@@ -222,6 +256,13 @@ public class Piece : MonoBehaviour
         return Wrap(walKickIndex, 0, data.wallKicks.GetLength(0));
     }
 
+    /// <summary>
+    /// 回転入れ
+    /// </summary>
+    /// <param name="input"></param>
+    /// <param name="min"></param>
+    /// <param name="max"></param>
+    /// <returns></returns>
     private int Wrap(int input, int min, int max)
     {
         if(input < min )

@@ -23,6 +23,9 @@ public class MovementController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    /// <summary>
+    /// キー入力処理
+    /// </summary>
     private void Update()
     {
         if(Input.GetKey(inputUp))
@@ -57,6 +60,9 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 移動処理をrigidBody2Dで行う
+    /// </summary>
     private void FixedUpdate()
     {
         Vector2 position = rb.position;
@@ -65,6 +71,10 @@ public class MovementController : MonoBehaviour
         rb.MovePosition(position + translation);
     }
 
+    /// <summary>
+    /// 新しい方向をセットする
+    /// </summary>
+    /// <param name="newDirection"></param>
     private void SetDirection(Vector2 newDirection)
     {
         direction = newDirection;
@@ -79,6 +89,9 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 死亡シークエンス
+    /// </summary>
     private void DeathSequence()
     {
         enabled = false;
@@ -87,6 +100,10 @@ public class MovementController : MonoBehaviour
         Invoke(nameof(OnDeathSequeceEnabled), 1.0f);
     }
 
+
+    /// <summary>
+    /// 死亡シークエンスが有効かどうか
+    /// </summary>
     private void OnDeathSequeceEnabled()
     {
         gameObject.SetActive(false);

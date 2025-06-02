@@ -15,12 +15,20 @@ public class Explosion : MonoBehaviour
         end.enabled = renderer == end;
     }
 
+    /// <summary>
+    /// ”š”­‚Ì•ûŒü
+    /// </summary>
+    /// <param name="direction"></param>
     public void SetDirection(Vector2 direction)
     {
         float angle = Mathf.Atan2(direction.y, direction.x);
         transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
     }
 
+    /// <summary>
+    /// ”j‰óŒã‚ÌŒãˆ—
+    /// </summary>
+    /// <param name="seconds"></param>
     public void DestroyAfter(float seconds)
     {
         Destroy(gameObject, seconds);

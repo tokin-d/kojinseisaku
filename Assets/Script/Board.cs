@@ -23,6 +23,9 @@ public class Board : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// タイルマップとテトリミノを初期化
+    /// </summary>
     private void Awake()
     {
         tilemap = GetComponentInChildren<Tilemap>();
@@ -39,6 +42,9 @@ public class Board : MonoBehaviour
         SpawnPiece();
     }
 
+    /// <summary>
+    /// 新しいピースを生成
+    /// </summary>
     public void SpawnPiece()
     {
         int random = Random.Range(0, tetrominoes.Length);
@@ -57,17 +63,25 @@ public class Board : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ゲームオーバー処理
+    /// </summary>
     public async void GameOver()
     {
         tilemap.ClearAllTiles();
 
-        activePiece.enabled = false; 
+        activePiece.enabled = false;
+
         // 追加
-        SceneManager.LoadScene("Title");
+        await SceneManager.LoadSceneAsync("Title");
         await Task.Delay(500);
         
     }
 
+    /// <summary>
+    /// 落下させるピースをセットする
+    /// </summary>
+    /// <param name="piece"></param>
     public void Set(Piece piece)
     {
         for (int i = 0; i < piece.cells.Length; i++)
@@ -77,6 +91,10 @@ public class Board : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ピースの削除
+    /// </summary>
+    /// <param name="piece"></param>
     public void Clear(Piece piece)
     {
         for (int i = 0; i < piece.cells.Length; i++)
@@ -86,6 +104,12 @@ public class Board : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 有効な場所
+    /// </summary>
+    /// <param name="piece"></param>
+    /// <param name="position"></param>
+    /// <returns>true: 有効 false: 無効</returns>
     public bool IsValidPosition(Piece piece, Vector3Int position)
     {
         RectInt bounds = Bounds;
@@ -108,7 +132,9 @@ public class Board : MonoBehaviour
         return true;
     }
 
-
+    /// <summary>
+    /// 複数の行のクリア
+    /// </summary>
     public void ClearLines()
     {
         RectInt bounds = Bounds;
@@ -126,7 +152,11 @@ public class Board : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// 行がいっぱいかどうか
+    /// </summary>
+    /// <param name="row"></param>
+    /// <returns>ture:いっぱい false: そうでない</returns>
     public bool IsLineFull(int row)
     {
         RectInt bounds = Bounds;
@@ -144,7 +174,10 @@ public class Board : MonoBehaviour
         return true;
     }
 
-
+    /// <summary>
+    /// 1ラインのクリア
+    /// </summary>
+    /// <param name="row"></param>
     public void LineClear(int row)
     {
         RectInt bounds = Bounds;

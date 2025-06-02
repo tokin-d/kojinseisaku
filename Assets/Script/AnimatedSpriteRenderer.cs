@@ -35,6 +35,9 @@ public class AnimatedSpriteRenderer : MonoBehaviour
         InvokeRepeating(nameof(NextFrame), animationTime, animationTime);
     }
 
+    /// <summary>
+    ///  次フレームのアニメーションを作成
+    /// </summary>
     private void NextFrame()
     {
         animationFrame++;

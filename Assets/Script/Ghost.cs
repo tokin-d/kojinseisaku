@@ -28,6 +28,9 @@ public class Ghost : MonoBehaviour
         Set();
     }
 
+    /// <summary>
+    /// ピースの削除
+    /// </summary>
     private void Clear()
     {
         for(int i = 0; i < cells.Length; i++)
@@ -37,6 +40,9 @@ public class Ghost : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 落下するピースをコピーする
+    /// </summary>
     private void Copy()
     {
         for(int i = 0; i < cells.Length; i++)
@@ -45,6 +51,9 @@ public class Ghost : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 落下中のピーストレースする
+    /// </summary>
     private void Drop()
     {
         Vector3Int position = trackingPiece.position;
@@ -72,6 +81,9 @@ public class Ghost : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 落下するピースをセット
+    /// </summary>
     private void Set()
     {
         for(int i = 0; i < cells.Length; i++)

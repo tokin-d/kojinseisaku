@@ -41,6 +41,10 @@ public class BombController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 爆弾設置のコルーチン
+    /// </summary>
+    /// <returns>設定された爆発時間まで待機</returns>
     private IEnumerator PlaceBomb()
     {
         Vector2 position = transform.position;
@@ -70,6 +74,12 @@ public class BombController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 爆発を処理する関数
+    /// </summary>
+    /// <param name="position"></param>
+    /// <param name="direction"></param>
+    /// <param name="length"></param>
     private void Explode(Vector2 position, Vector2 direction, int length)
     {
         if(length <= 0)
@@ -94,6 +104,10 @@ public class BombController : MonoBehaviour
         Explode(position, direction, length - 1);
     }
 
+    /// <summary>
+    /// 破壊可能なタイルをクリア
+    /// </summary>
+    /// <param name="position"></param>
     private void ClearDestructible(Vector2 position)
     {
         Vector3Int cell = destrucibleTiles.WorldToCell(position);
@@ -114,6 +128,9 @@ public class BombController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 爆弾をついか
+    /// </summary>
     public void AddBomb()
     {
         bombAmount++;
