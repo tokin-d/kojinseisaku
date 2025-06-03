@@ -7,6 +7,9 @@ public static class Data
     public static readonly float sin = Mathf.Sin(Mathf.PI / 2f);
     public static readonly float[] RotationMatrix = new float[] { cos, sin, -sin, cos };
 
+    /// <summary>
+    /// テトリミノのデータ
+    /// </summary>
     public static readonly Dictionary<Tetromino, Vector2Int[]> Cells = new Dictionary<Tetromino, Vector2Int[]>()
     {
         { Tetromino.I, new Vector2Int[] { new Vector2Int(-1, 1), new Vector2Int( 0, 1), new Vector2Int( 1, 1), new Vector2Int( 2, 1) } },
@@ -18,6 +21,9 @@ public static class Data
         { Tetromino.Z, new Vector2Int[] { new Vector2Int(-1, 1), new Vector2Int( 0, 1), new Vector2Int( 0, 0), new Vector2Int( 1, 0) } },
     };
 
+    /// <summary>
+    /// 読み込み限定の特殊回用の転配列１
+    /// </summary>
     private static readonly Vector2Int[,] WallKicksI = new Vector2Int[,] {
         { new Vector2Int(0, 0), new Vector2Int(-2, 0), new Vector2Int( 1, 0), new Vector2Int(-2,-1), new Vector2Int( 1, 2) },
         { new Vector2Int(0, 0), new Vector2Int( 2, 0), new Vector2Int(-1, 0), new Vector2Int( 2, 1), new Vector2Int(-1,-2) },
@@ -29,6 +35,9 @@ public static class Data
         { new Vector2Int(0, 0), new Vector2Int(-1, 0), new Vector2Int( 2, 0), new Vector2Int(-1, 2), new Vector2Int( 2,-1) },
     };
 
+    /// <summary>
+    /// 読み込み限定の特殊回転用の配列２
+    /// </summary>
     private static readonly Vector2Int[,] WallKicksJLOSTZ = new Vector2Int[,] {
         { new Vector2Int(0, 0), new Vector2Int(-1, 0), new Vector2Int(-1, 1), new Vector2Int(0,-2), new Vector2Int(-1,-2) },
         { new Vector2Int(0, 0), new Vector2Int( 1, 0), new Vector2Int( 1,-1), new Vector2Int(0, 2), new Vector2Int( 1, 2) },
@@ -40,6 +49,9 @@ public static class Data
         { new Vector2Int(0, 0), new Vector2Int( 1, 0), new Vector2Int( 1, 1), new Vector2Int(0,-2), new Vector2Int( 1,-2) },
     };
 
+    /// <summary>
+    /// 読み込み限定の特殊回転の辞書
+    /// </summary>
     public static readonly Dictionary<Tetromino, Vector2Int[,]> WallKicks = new Dictionary<Tetromino, Vector2Int[,]>()
     {
         { Tetromino.I, WallKicksI },
